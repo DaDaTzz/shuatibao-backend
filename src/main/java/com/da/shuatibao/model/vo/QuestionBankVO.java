@@ -4,6 +4,8 @@ import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableLogic;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.da.shuatibao.model.entity.Question;
 import com.da.shuatibao.model.entity.QuestionBank;
 import lombok.Data;
 import org.springframework.beans.BeanUtils;
@@ -25,6 +27,11 @@ public class QuestionBankVO implements Serializable {
      * id
      */
     private Long id;
+
+    /**
+     * 题库里的题目列表（分页）
+     */
+    private Page<Question> questionPage;
 
     /**
      * 标题
